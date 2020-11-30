@@ -1,4 +1,4 @@
-*, :before, :after {
+* {
     box-sizing: border-box;
 }
 
@@ -68,4 +68,13 @@ h3 {
 
 .element {
     padding: 0.5rem;
+}
+
+.invalid {
+    color: red;
+}
+
+input.invalid {
+    border-color: red;
+    color: black;
 }
