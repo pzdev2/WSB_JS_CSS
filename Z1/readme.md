@@ -15,7 +15,7 @@ HTML zwykle ignoruje nasze spacje, tabulatory i wcięcia.
 
 JSON - to format wymiany danych, jeszcze będziemy o nim mówić.
 W tym wypadku, żeby ładnie wyświetlić obiekt na stronie, konwertujemy 
-nasz objekt javascriptowy (`object`) na JSONa (JSON wyświetla się na stronie w sekcji "Baza danych").
+nasz obiekt javascriptowy (`object`) na JSONa (JSON wyświetla się na stronie w sekcji "Baza danych").
 
 Testowo można wykonać sobie w konsoli przeglądarki metody konwertujące i zobaczyć, co zwracają:
 
