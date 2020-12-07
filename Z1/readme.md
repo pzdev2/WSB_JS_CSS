@@ -62,3 +62,34 @@ Ten fragment umożliwia nam wyciągnięcie danych wpisanych do formularza i prze
 - następnie na podstawie formularza tworzymy obiekt `FormData`
 - obiekt `FormData` posiada metodę `entries`, która umożliwia iterację po polach formularza
 - w pętli tworzymy obiekt - "kluczami" w tym obiekcie są nazwy pól formularza, a "wartościami" zawartości tych pól
+
+
+### Parametr event
+
+```js
+document.addEventListener("DOMContentLoaded", function(event) {
+    document.getElementById("test").onmouseenter = test;
+});
+
+function test(event) {
+    event.target.innerText = "TAK";
+}
+```
+
+Jest domyślny parametr, który JS zawsze dorzuca jako pierwszy argument funkcji 
+wykonującej się po zajściu jakiegoś zdarzenia. 
+Jest to obiekt, który reprezentuje właśnie to zdarzenie - 
+w przykładzie wywołujemy `event.target` - target jest to element na stronie, 
+na którym zdarzenie się odbyło, np. po kliknięciu w znacznik `<button>`
+eventem będzie kliknięcie, a przez event.target będziemy mogli się dostać 
+do obiektu reprezentującego `<button>`. Ten kod można sobie przetestować:
+
+- przepisać do pliku np. `test.js`
+- stworzyć sobie jakiś plik, np. `test.html`, do którego załączymy ten `test.js` 
+(na tej stronie powinien się znaleźć jakiś obiekt o id test, np. `<button id='test'>TEST</button>`) i włączyć stronę w przeglądarce
+- w narzędziach developerskich odnaleźć plik `test.js` (w Chrome można to zrobić w zakładce "Sources") i ustawić breakpoint wewnątrz funkcji `test`
+- po najechaniu myszką na guzik o id `test` powinniśmy się zatrzymać na tym breakpoincie - wówczas w konsoli można wpisać sobie "event" i popatrzeć, jakie tam są informacje
+	 
+### Co to jest Node
+
+Node to inaczej węzeł w dokumencie HTML - w zasadzie inna nazwa na tag czy element na stronie; węzłem może być div, button itd.
