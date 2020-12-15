@@ -82,20 +82,105 @@ function validateNumber(number) {
 }
 
 function validateRadio(radio) {
-    // todo
 
-    return true;
+    let valid = false;
+    
+    if (radio !== undefined) {
+        valid = true;
+    }
+
+    const input = document.querySelector("input[name='favouriteNumber']");
+
+    if (valid) {
+
+        input.className = "";
+
+        const nameMessage = document.getElementById("radio-uncheck-message");
+        if (nameMessage) {
+            nameMessage.parentElement.removeChild(nameMessage);
+        }
+
+    } else {
+
+        input.className = "invalid";
+
+        if (!document.getElementById("radio-uncheck-message")) {
+            const smallRadio = document.createElement("small");
+            smallRadio.id = "radio-uncheck-message";
+            smallRadio.className = "invalid";
+            smallRadio.innerText = "Jedno \"radio\" musi być wybrane";
+
+            input.parentElement.appendChild(smallRadio);
+        }
+    }
+
+    return valid;
 }
 
 function validatePassword(password) {
     // regex do hasła: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/
-    // todo
+    const valid = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/.test(password);
+    
+    const input = document.querySelector("input[name='password']");
 
-    return true;
+    if (valid) {
+
+        input.className = "";
+
+        const nameMessage = document.getElementById("password-input-message");
+        if (nameMessage) {
+            nameMessage.parentElement.removeChild(nameMessage);
+        }
+
+    } else {
+
+        input.className = "invalid";
+
+        if (!document.getElementById("password-input-message")) {
+            const smallPass = document.createElement("small");
+            smallPass.id = "password-input-message";
+            smallPass.className = "invalid";
+            smallPass.innerText = "Hasło musi mieć min. 8 znaków, w tym: cyfre, małą i duzą litere";
+
+            input.parentElement.appendChild(smallPass);
+        }
+    }
+
+    return valid;
 }
 
 function validateRepeatedPassword(password, repeatedPassword) {
-    // todo
 
-    return true;
+    let valid = false;
+
+    if(password === repeatedPassword && repeatedPassword !== "") {
+        valid = true;
+    }
+    
+    const input = document.querySelector("input[name='password2']");
+
+    if (valid) {
+
+        input.className = "";
+
+        const nameMessage = document.getElementById("rePassword-input-message");
+        if (nameMessage) {
+            nameMessage.parentElement.removeChild(nameMessage);
+        }
+
+    } else {
+
+        input.className = "invalid";
+
+        if (!document.getElementById("rePassword-input-message")) {
+            const smallRePass = document.createElement("small");
+            smallRePass.id = "rePassword-input-message";
+            smallRePass.className = "invalid";
+            smallRePass.innerText = "Pole \"Powtórz hasło\" nie moze być puste i musi być takie samo jak pole \"Hasło\"";
+
+            input.parentElement.appendChild(smallRePass);
+        }
+    }
+
+    return valid;
 }
