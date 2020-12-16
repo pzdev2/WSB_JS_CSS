@@ -66,10 +66,6 @@ h3 {
     text-align: center;
 }
 
-.element {
-    padding: 0.5rem;
-}
-
 .invalid {
     color: red;
 }
@@ -77,4 +73,10 @@ h3 {
 input.invalid {
     border-color: red;
     color: black;
+}
+
+@media (max-width: 650px) {
+    .column.half-column {
+        width: 100%;
+    }
 }
